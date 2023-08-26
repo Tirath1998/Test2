@@ -1,0 +1,75 @@
+mutation {
+    xtremMasterData {
+        customer {
+            bulkUpdate(
+                data:{
+                  	
+                  	
+                    isOnHold:true,
+                  	isActive: true,
+                  	internalNote: {
+                      value: "<p>hello</p>"
+                    },
+                  	paymentTerm: 37,
+                  	deliveryAddresses: {
+                      shipToAddress: 4416,
+                      deliveryMode: 7
+                    }
+                  
+                }
+                filter : "{_id:{_eq:92}}"
+            )
+        }
+    }
+}
+
+mutation {
+   xtremMasterData {
+     businessEntity {
+       update(
+         data: {
+         		_id: "305",
+         		name: "Tirath Pansari"
+         }) {
+        	id
+        _id
+         _updateStamp
+       }
+     }
+   }
+}
+
+
+{
+  xtremMasterData {
+    businessEntity {
+      query(filter: "{id:{_eq:'Tirath20'},name:{_eq:'Tirath20'}}") {
+
+          totalCount 
+        pageInfo { 
+          endCursor 
+          hasNextPage 
+          startCursor 
+          hasPreviousPage 
+        } 
+        edges {
+          node {
+            _id
+            id
+            name
+           
+          }
+        }
+      }
+    }
+  }
+}
+
+red-flag-shipbob-brightpearl-integration
+brightpearl-automated-exchange-order
+
+{
+    "response": [
+        67267
+    ]
+}
